@@ -34,11 +34,14 @@
                         <Bundle-Name>${project.name}</Bundle-Name>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Bundle-Activator>
-                            es.brunomendoza.lab.osgi.service.App
+                            es.brunomendoza.lab.osgi.service.impl.Greeter
                         </Bundle-Activator>
                         <Private-Package>
-                            es.brunomendoza.lab.osgi.service
+                            es.brunomendoza.lab.osgi.service.impl
                         </Private-Package>
+                        <Export-Package>
+                            es.brunomendoza.lab.osgi.service
+                        </Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
