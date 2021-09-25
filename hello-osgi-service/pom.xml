@@ -7,6 +7,7 @@
     <groupId>es.brunomendoza.lab.osgi</groupId>
     <artifactId>hello-osgi-service</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
 
     <properties>
         <maven.compiler.release>11</maven.compiler.release>
@@ -18,6 +19,27 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.3.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>
+                            ${pom.groupId}.${pom.artifactId}
+                        </Bundle-SymbolicName>
+                        <Bundle-Name>${pom.name}</Bundle-Name>
+                        <Bundle-Version>${pom.version}</Bundle-Version>
+                        <Bundle-Activator>
+                            com.baeldung.osgi.sample.activator.HelloWorld
+                        </Bundle-Activator>
+                        <Private-Package>
+                            com.baeldung.osgi.sample.activator
+                        </Private-Package>
+                    </instructions>
+                </configuration>
             </plugin>
         </plugins>
     </build>
