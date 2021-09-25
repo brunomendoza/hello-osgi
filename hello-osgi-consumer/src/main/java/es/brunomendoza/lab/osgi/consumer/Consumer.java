@@ -36,7 +36,7 @@ public class Consumer implements BundleActivator, ServiceListener {
 
         switch (type) {
             case(ServiceEvent.REGISTERED):
-                System.out.println("Notificadtion of service registered.");
+                System.out.println("Notification of service registered.");
                 serviceReference = serviceEvent
                         .getServiceReference();
                 IGreeter service = (IGreeter) (bundleContext.getService(serviceReference));
