@@ -1,3 +1,5 @@
+package es.brunomendoza.lab.osgi.service;
+
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -9,6 +11,6 @@ public class App implements BundleActivator {
 
     @Override
     public void stop(BundleContext bundleContext) throws Exception {
-        System.out.printf("Bye, Bundle");
+        System.out.println("Bye, Bundle");
     }
 }
